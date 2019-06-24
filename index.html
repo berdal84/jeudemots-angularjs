@@ -1,0 +1,132 @@
+<!doctype html>
+<html ng-app="MainApplication">
+
+	<head>
+		<title> Jeu de Mots Relativement Utiles</title>
+
+		<script src="js/angular_1.7.8.min.js" type="text/javascript"></script>
+		<script src="js/main.js"              type="text/javascript"></script>
+
+		<link   rel="stylesheet"        type="text/css"  href="css/main.css"/>
+		<link   rel="icon"              type="image/png" href="images/favicon.png" />
+
+		<meta charset="utf-8" /> 
+	</head>
+
+	<body ng-controller="MainController">
+
+		<!-- Main Menu -->
+
+		<div id="header">	
+
+			<a href="./" title="Accueil">
+				<img id="logo" src="images/logo.png" alt="Logo"/>
+			</a>
+			
+			<div id="div_menu" >
+				<ul id="menu">
+					<li ng-class="getItemClassNameWithId(item.pageId)" ng-repeat="item in items" ng-click="setCurrentPageId(item.pageId)" ><a>{{item.label}}</a></li>
+				</ul>
+			</div>	
+
+		</div>
+
+		<!-- Page content -->
+
+		<div id="content" ng-controller="ServerSideDataController">
+
+			<!-- Main Title -->
+			<h1>mdr:~$ www.RelativementUtile.fr/jeudemots</h1>
+
+			<!-- Presentation / Home -->
+
+			<div ng-hide="currentPageId!='presentation'">
+				<h2>Présentation</h2>
+				<p class="indente" >Ce site vous présente des jeu de mots créés par Berdal84 et autres. Une page d'accueil idéale qui changera votre vie à jamais!</p>
+				<br/>
+
+				<h2>"C'est tout ?!"</h2>
+				<p class="indente" >Mais non enfin, soyez rassuré...</p>
+				<p class="indente">Ici, nous avons le goût du travail bien fait. En effet, nous vous permettons de chercher à l'aide de mot clés dans la <a href="" ng-click="setCurrentPageId('list')">liste</a> de toutes les blagues ayant été publiées.</p>
+				<p class="indente">Cela vous permettra à tout moment d'avoir sous la main LE bon jeu de mot.</p>
+				<p class="indente"><b>L'objectif : Briller en société.</b></p>
+				<br/>
+
+				<h2>Les clés du succès</h2>
+				<p class="indente">Vous hésitez? Vous avez peur de vous lancer? Ne paniquez pas.</p>
+				<p class="indente">Nous vous livrons également quelques <a href="" ng-click="setCurrentPageId('advises')">astuces</a> bien pratiques pour réussir vos jeu de mots. Nos experts ont synthétisé les règles essentielles que doit connaître tout bon joueur de mot qui se respecte.</p>
+			</div>
+
+			<!-- Today's Joke -->
+
+			<div ng-hide="currentPageId!='today'">
+
+				<p>Aujourd'hui, classé en catégorie <b>{{jokes[0].category}}</b>, nous vous présentons en exclusivité :</p>	
+	
+				<blockquote>
+					<p class="citation" >"{{jokes[0].joke}}"</p>
+					<p class="note"><i>{{jokes[0].author}}</i></p>
+				</blockquote>			
+				
+			</div>
+
+			<!-- Joke List -->
+
+			<div ng-hide="currentPageId!='list'">
+
+				<h2>Liste complète des jeu de mots :</h2>
+				<p>Voici ci-dessous la liste des {{jokes.length}} jeu de mots du site. Vous pouvez les filtrer en saissant un (seul) mot clé dans le champ de saisie. Enjoy !</p>
+				<p>Filtre <input ng-model="search"></p>
+
+				<table>
+					<tr style="padding:0px;">
+						<td><p class="underlined" style="text-align:left;">Catégorie</p></td>
+						<td><p class="underlined">Jeu de mot</p></td>					
+						<td><p class="underlined">Auteur</p></td>
+						<td><p class="underlined">Date</p></td>				
+					</tr>
+					<tr ng-if="joke.visible" ng-repeat="joke in jokes | filter:search">
+						<td><p style="text-align:left;">{{joke.category}}</p></td>
+						<td><p class="justified">{{joke.joke}}</p></td>					
+						<td><p>{{joke.author}}</p></td>
+						<td><p>{{joke.date}}</p></td>				
+					</tr>
+				</table>
+			</div>
+
+			<!-- Advises --> 
+
+			<div ng-hide="currentPageId!='advises'">
+				<h3>Quelques conseils pour réussir vos blagues comme un pro :</h3>
+				<ol class="indente">
+					<li>Soyez-vous même.</li><br>
+					<li>Ne craignez-pas la moquerie.</li><br>
+					<li>N'abandonnez pas au premier échec.</li><br>
+					<li>Ne vous précipitez pas, mieux vaut pas de blague qu'une blague hors contexte.</li><br>
+					<li>Ressentez la force qui est en vous.</li><br>
+					<li>Mangez 5 fruits et légumes par jour.</li><br>
+					<li>Faites du sport.</li><br>
+					<li>Ayez des rapports sexuels réguliers (très important pour le "lâcher-prise").</li><br>
+				</ol>
+				<h3>Conseil spécial de M. DUSS:</h3>
+				<p class="indente">"Oublie que t'as aucune chance, vas-y fonce. Sur un mal entendu ça peut marcher." (<a href="https://www.youtube.com/watch?v=rIktiASrDFo">référence</a>)</p>
+				<br>
+			</div>
+
+			<!-- More -->
+
+			<div ng-hide="currentPageId!='more'">
+				<h2>A propos...</h2>
+				<section class="indente">
+					<p>A l'origine, ce site a été créé par <a href="http://www.RelativementUtile.fr">Berdal84</a> en 2015-16. Il a depuis été mis à jour (code, contenu et graphismes).</p>
+					<p>Ce site utilise le framework <a href="https://angularjs.org">AngularJS v1.7.8</a> (c) 2010-2018 Google, Inc. http://angularjs.org, License: MIT.</p>
+				</section>
+			</div>
+		</div>
+ 
+		<div id="footer">
+			<p>Design et Développement par B. 2016-{{currentYear}}</p>
+		</div>
+
+	</body>
+</html>
