@@ -1,3 +1,4 @@
+![logo](http://www.relativementutile.fr/jeudemots/images/logo.png)
 # JeuDeMots
 A simple website using AngularJS 1.7.8 to host jokes.
 
