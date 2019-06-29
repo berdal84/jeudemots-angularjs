@@ -1,5 +1,12 @@
 [
 	{
+		"category":		"Emploi",
+		"joke":			"Recrutements massifs pour la mise en service de l'authentification à double facteur sur laposte.net",
+		"author":		"Belache",
+		"date":			"2019-06-28" ,
+		"visible":		true
+	},
+	{
 		"category":		"Agilité",
 		"joke":			"Je ne travaille pas pour une start-up agile mais pour LA start-up à Gilles.",
 		"author":		"Belache",
