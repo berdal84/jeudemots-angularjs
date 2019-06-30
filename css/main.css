@@ -139,7 +139,7 @@ p.justified
 
 blockquote
 {
-	text-align:				justify-left;
+	text-align:				justify;
 	padding: 				20px;
 	border-radius: 			10px;
 	border:					1px solid #fff;
