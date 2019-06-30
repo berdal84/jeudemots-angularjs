@@ -7,7 +7,8 @@ var mainApplication = angular.module('MainApplication',[]);
 
 mainApplication.controller('MainController', ['$anchorScroll', '$location', '$scope', function($anchorScroll, $location, $scope) {
 
-	$scope.currentYear = new Date().getFullYear();
+	$scope.websiteTitle = "RelativementUtile.fr/jeudemots";
+	$scope.currentYear  = new Date().getFullYear();
 
 	$scope.setCurrentPageId = function(s)
 	{		
