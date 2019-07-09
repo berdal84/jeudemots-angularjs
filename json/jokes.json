@@ -1,5 +1,12 @@
 [
 	{
+		"category":     "Mathématique et Religion",
+		"joke":         "On divise tout par dieu, et hop !",
+		"author":       "Anne",
+		"date":         "2019-07-08",
+		"visible":      true
+	},
+	{
 		"category":		"Emploi",
 		"joke":			"Recrutements massifs pour la mise en service de l'authentification à double facteur sur laposte.net",
 		"author":		"Belache",
