@@ -1,5 +1,12 @@
 [
 	{
+		"category":     "Super-héros",
+		"joke":         "Le chauve souris.",
+		"author":       "Julien Vall",
+		"date":         "2019-07-12",
+		"visible":      true
+	},
+	{
 		"category":     "Pouvoir d'achat",
 		"joke":         "Homéopathie déremboursée, sucrer son café deviendra bientôt un luxe.",
 		"author":       "M. Boicarré",
