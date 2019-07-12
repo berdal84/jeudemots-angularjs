@@ -1,5 +1,12 @@
 [
 	{
+		"category":     "Pouvoir d'achat",
+		"joke":         "Homéopathie déremboursée, sucrer son café deviendra bientôt un luxe.",
+		"author":       "M. Boicarré",
+		"date":         "2019-07-12",
+		"visible":      true
+	},
+	{
 		"category":     "Mathématique et Religion",
 		"joke":         "On divise tout par dieu, et hop !",
 		"author":       "Anne",
