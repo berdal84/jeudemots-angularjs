@@ -23,7 +23,7 @@ mainApplication.controller('MainController', ['$anchorScroll', '$location', '$sc
 		return "itemDisable";
 	};
 	
-	/* Some menu_items */
+	/* Set an array for menu items */
 
 	$scope.items =
 	[
@@ -34,7 +34,7 @@ mainApplication.controller('MainController', ['$anchorScroll', '$location', '$sc
 		{pageId:"more"			, label:"?"}					
 	];
 	
-	/* Set default page */
+	/* Set default page to today if not already defined */
 	if ( $location.path() != "")
 		$scope.setCurrentPageId($location.path().substr(1));
 	else
