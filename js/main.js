@@ -53,7 +53,7 @@ mainApplication.controller('ServerSideDataController', ['$http', '$scope', funct
 	  	if (response.xhrStatus == "complete"){
 			if (response.status == 200){
 				$scope.jokes = angular.fromJson(response.data);
-				$scope.todayJokeAuthor = "Test Author";
+				console.log("jokes.json file successfully loaded.");
 			}else{
 				console.log("Unable to get JSON file: ", response.statusText);
 			}			
