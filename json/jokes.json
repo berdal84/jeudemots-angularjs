@@ -1,5 +1,12 @@
 [
 	{
+		"category":     "Bon goût",
+		"joke":         "Ta confiture est aussi bonne que maman.",
+		"author":       "M. Subtil",
+		"date":         "2019-07-13",
+		"visible":      true
+	},
+	{
 		"category":     "Super-héros",
 		"joke":         "Le chauve souris.",
 		"author":       "Julien Vall",
