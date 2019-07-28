@@ -1,5 +1,12 @@
 [
 	{
+		"category":     "Sciences",
+		"joke":         "\"[...] l'expérience de Milgram ne vaut pas lourd [...]\" selon un rapport de la CGPM.",
+		"author":       "J. Quintal",
+		"date":         "2019-07-27",
+		"visible":      true
+	},
+	{
 		"category":     "Bon goût",
 		"joke":         "Ta confiture est aussi bonne que maman.",
 		"author":       "M. Subtil",
